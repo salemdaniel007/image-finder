@@ -19,16 +19,14 @@ export default {
 
 <style>
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Lobster', cursive;
   line-height: 1.6;
-  background: #e8f7f0;
+  background: rgb(19, 18, 18);
+  color: wheat;
 }
 .container {
-  position: relative;
   height: 100vh;
-  max-width: 1100px;
   margin: auto;
-  max-height: 600px;
   padding: 0 2rem;
 }
 </style>
