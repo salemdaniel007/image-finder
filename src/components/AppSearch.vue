@@ -138,4 +138,16 @@ button:hover {
 button:focus {
 	outline: none;
 }
+
+@media only screen 
+  and (min-device-width: 280px) 
+  and (max-device-width: 731px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .search {
+        width: 66%;
+    }
+    button {
+        width: 62px;
+    }
+}
 </style>
