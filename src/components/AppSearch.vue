@@ -8,9 +8,12 @@
         <button @click="searchImg">search</button>
       </div>
       <div class="flex">
-          <div class="image" v-for="image in images" :key="image.id">
+          <div v-if="notFound">
+              <h1>Lagbaja nothing for you...🤡</h1>
+          </div>
+          <div v-else class="image" v-for="image in images" :key="image.id">
               <img :src="image.urls.raw + '&w=600&h=600'" alt="">
-       </div>
+          </div>
       </div>
   </div>
 </template>
@@ -25,6 +28,9 @@ export default {
     computed: {
         images () {
             return this.$store.getters.images
+        },
+        notFound () {
+            return this.$store.getters.notFound
         },
         search: {
             get () {

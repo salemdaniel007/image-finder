@@ -6,12 +6,14 @@ const unsplash = createApi({
 
 const state = {
     images: [],
-    searchTerm: null
+    searchTerm: null,
+    notFound: false
 };
 
 const getters = { 
     images: state => state.images,
-    searchTerm: state => state.searchTerm
+    searchTerm: state => state.searchTerm,
+    notFound: state => state.notFound
 };
 
 const actions = {
@@ -29,8 +31,14 @@ const actions = {
         } else {
           // handle success here
           const photo = result.response.results;
-          console.log(photo);
-          commit('setImage', photo)
+          if (photo && photo.length === 0) {
+            state.notFound = true
+            console.log(photo)   
+          } else {
+            console.log(photo);
+            state.notFound = false
+            commit('setImage', photo)
+          }
         }
       });
         
