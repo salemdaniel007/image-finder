@@ -9,7 +9,7 @@
       </div>
       <div class="flex">
           <div v-if="notFound">
-              <h1>I'm sorry, am I? not really. But no images matched your query. Try searching something else or go do something productive with your time</h1>
+              <h1>Lagbaja nothing for you...🤡</h1>
           </div>
           <div v-else class="image" v-for="image in images" :key="image.id">
               <img :src="image.urls.raw + '&w=600&h=600'" alt="">
